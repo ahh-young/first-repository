@@ -18,3 +18,5 @@ int main()
 Rect a(5,10);
 cout<<a.getArea()<<endl;
 }
+
+이아영 바보!!!!!
