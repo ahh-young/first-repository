@@ -21,4 +21,4 @@ Rect a(5,10);
 cout<<a.getArea()<<endl;
 }
 
-이아영 바보!!!!!
+dmd 이아영 바보!!!!!
