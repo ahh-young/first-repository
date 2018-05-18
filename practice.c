@@ -1,5 +1,5 @@
 // 작성자: 이아영,이정민
-//c++을 이용한 class 구현
+//c++을 이용한 rectangle class 구현
 #include<iostream>
 using namepsace std;
 class Rect
