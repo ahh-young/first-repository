@@ -67,15 +67,17 @@ void setColor(char *cell1) {
 	if (multiple == 51)
 	switch (atoi(cell1)) {    
 	case 3: cColor = 207; break;
-	case 9: cColor = 224; break;  
-	case 27: cColor = 160; break;
-	case 81: cColor = 179; break;
-	case 243: cColor = 159; break;
-	case 729: cColor = 223; break;
-	case 2187: cColor = 143; break;
-	case 6561: cColor = 15; break;
-	case 19683: cColor = 207; break;
-	case 59049: cColor = 239; break;
+	case 6: cColor = 224; break;  
+	case 12: cColor = 160; break;
+	case 24: cColor = 179; break;
+	case 48: cColor = 159; break;
+	case 96: cColor = 223; break;
+	case 192: cColor = 143; break;
+	case 384: cColor = 15; break;
+	case 768: cColor = 207; break;
+	case 1536: cColor = 239; break;
+	case 3072: cColor = 175; break;
+	case 6144: cColor = 191; break;
 	default: cColor = 7; break;
 	}
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), cColor);
@@ -117,6 +119,7 @@ void init() {
 	}
 
 	score = 0;
+
 	if(multiple==50)
 	addRandomValue(true);
 	addRandomValue(true);
@@ -133,8 +136,9 @@ void welcomeView() {//처음시작화면함수
 	center("", WH);
 
 	while (getch() != 50 && getch() != 51) {//enter키입력받았는지 확인하는 반복문
-	}
 	multiple = getch();
+	}
+	
 	system("cls");//화면 지우기
 }
 void endView() {
@@ -241,7 +245,7 @@ void addRandomValue(bool add) {
 	}
 }
 void addRandomValue1(bool add) {
-	/*빈 셀의 임의의 위치에 3, 9중 하나의 수를 넣는 함수*/
+	/*빈 셀의 임의의 위치에 3, 6중 하나의 수를 넣는 함수*/
 	unsigned short x, y;
 
 	if (add) {
@@ -252,7 +256,7 @@ void addRandomValue1(bool add) {
 		} while (!isEmpty(cell[x][y]));
 
 		char str[5];
-		sprintf(str, "%4d", (rand() % 3 + 1) * 3); //2, 4중 임의의 숫자를 str에 넣
+		sprintf(str, "%4d", (rand() % 2 + 1) * 3); //2, 4중 임의의 숫자를 str에 넣
 		strcpy(cell[x][y], str);
 
 		bool end = true;
