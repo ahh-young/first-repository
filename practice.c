@@ -20,3 +20,5 @@ int main()
 Rect a(5,10);
 cout<<a.getArea()<<endl;
 }
+
+dmd 이아영 바보!!!!!
